@@ -13,11 +13,27 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       // home: Text('안녕'),
       // home: Icon(Icons.star),
-      home:
-            // Image.asset('dears_banner.jpg'),
-            Center(
-              child: Container( width: 50, height: 50, color: Colors.blueAccent ),
-            )
+      home: Scaffold(
+        appBar: AppBar(
+          title : Text("Dears")
+        ),
+
+        body: Container(
+          color: Colors.grey,
+
+        ),
+
+        bottomNavigationBar: BottomAppBar(
+          child : Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Icon(Icons.phone),
+            Icon(Icons.message),
+            Icon(Icons.contact_page),
+          ],
+        )
+        )
+      )
 
     );
 
