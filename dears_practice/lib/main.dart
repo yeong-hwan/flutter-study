@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:dears_practice/dio_server.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,12 +27,30 @@ class MyApp extends StatelessWidget {
         bottomNavigationBar: BottomAppBar(
           child : Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Icon(Icons.phone),
-            Icon(Icons.message),
-            Icon(Icons.contact_page),
-          ],
-        )
+            children: [
+              GestureDetector(
+                onTap: () {
+                  server.getReq();
+                  print("Phone icon tapped");
+                },
+                child: Icon(Icons.phone),
+              ),
+              GestureDetector(
+                onTap: () {
+                  server.postReq();
+                  print("Message icon tapped");
+                },
+                child: Icon(Icons.message),
+              ),
+              GestureDetector(
+                onTap: () {
+                  server.getReqWzQuery();
+                  print("Contact page icon tapped");
+                },
+                child: Icon(Icons.contact_page),
+              ),
+            ],
+          )
         )
       )
 
